@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
-# Create your views here.
+from .models import Player
+
+
+class PlayerView(APIView):
+    def get(self):
+        players = Player.objects.all();
+        return Response({"players": players})
