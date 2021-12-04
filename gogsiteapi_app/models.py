@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Player(models.Model):
     login = models.CharField(unique=True, max_length=255)
     password = models.CharField(max_length=255)
@@ -11,9 +12,11 @@ class Player(models.Model):
         managed = False
         db_table = 'player'
 
+
 class Developer(models.Model):
     login = models.CharField(max_length=255, blank=True, null=True)
     password = models.CharField(max_length=255, blank=True, null=True)
+    role = models.CharField(max_length=255, blank=True, null=True)
 
     class Meta:
         managed = False
@@ -27,4 +30,3 @@ class Post(models.Model):
     class Meta:
         managed = False
         db_table = 'post'
-
