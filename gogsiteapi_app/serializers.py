@@ -5,7 +5,7 @@ from gogsiteapi_app.models import Player, Developer, Post
 class PlayerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Player
-        fields = ('id', 'login', 'password', 'email', 'score', 'nickname')
+        fields = ('id', 'password', 'email', 'score', 'nickname')
 
 
 class DeveloperSerializer(serializers.ModelSerializer):
